@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        this.ResetBackToSpawningPoint();
+       // this.ResetBackToSpawningPoint();
     }
     
     //get the input from keyboard/gamepad for movement
