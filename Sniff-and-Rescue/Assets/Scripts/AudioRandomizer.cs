@@ -2,11 +2,12 @@ using UnityEngine;
 public class AudioRandomizer : MonoBehaviour
 {
     [Header("Timing")]
-    public float minDelay = 10f;
-    public float maxDelay = 30f;
+    [SerializeField] public float minDelay = 10f;
+    [SerializeField] public float maxDelay = 30f;
     [Header("Audio")]
     public AudioSource source;
     public AudioClip[] sounds;
+
     void Start()
     {
         StartCoroutine(Loop());
