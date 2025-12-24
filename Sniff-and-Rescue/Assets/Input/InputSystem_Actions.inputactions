@@ -188,7 +188,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad;Gamepad1",
+                    "groups": ";Gamepad1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false

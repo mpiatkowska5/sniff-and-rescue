@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity; // remember player speed (need for falling)
 
      //retrieved from InputSystem
-    Vector2 moveInput;
+    public Vector2 moveInput;
     Vector3 lookInput;
     float isRunning;
     float speed;
