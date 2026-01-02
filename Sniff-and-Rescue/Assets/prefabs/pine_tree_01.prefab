@@ -60,9 +60,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.732
       objectReference: {fileID: 0}
+    - target: {fileID: -7421033346236238759, guid: b269c65a5eb97ac4b9fdf706a1b168c1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b269c65a5eb97ac4b9fdf706a1b168c1, type: 3}
       propertyPath: m_Name
       value: pine_tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b269c65a5eb97ac4b9fdf706a1b168c1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255241312799379974, guid: b269c65a5eb97ac4b9fdf706a1b168c1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88,7 +100,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
