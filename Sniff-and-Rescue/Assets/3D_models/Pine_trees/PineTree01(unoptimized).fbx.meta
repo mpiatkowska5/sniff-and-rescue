@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: b9e3e7385a902304e8f1f0c18cc446fb
+guid: 26fa118edc14eda4289c09aa22fe53f9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pineNeedles02
-    second: {fileID: 2100000, guid: 4e59fdd1d7bdfe747a4d2ba035a86c55, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
