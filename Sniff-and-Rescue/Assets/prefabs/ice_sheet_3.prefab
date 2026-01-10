@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1357265604491152924}
   - component: {fileID: 2252492388388570907}
   - component: {fileID: -6334206611098195586}
+  - component: {fileID: -5026743909154044047}
   m_Layer: 0
   m_Name: ice_sheet_3
   m_TagString: Untagged
@@ -109,3 +110,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6103340922665858698, guid: c448706226c433f44972b21cfd7e7b86, type: 3}
+--- !u!205 &-5026743909154044047
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7655995797461353156}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
