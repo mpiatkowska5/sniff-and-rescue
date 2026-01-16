@@ -76,11 +76,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnInteract()
-    {
-        Debug.Log("Interact pressed");
-    }
-
     private void Update()
     {
         /*if(isRunning>0.2)

@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5477749408508380018, guid: 47ce15c8c5678db4abf296a647ab10f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.004
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 47ce15c8c5678db4abf296a647ab10f7, type: 3}
       propertyPath: m_Name
       value: medkit
@@ -62,6 +66,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47ce15c8c5678db4abf296a647ab10f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1382179998118907249}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47ce15c8c5678db4abf296a647ab10f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533273374365786372}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47ce15c8c5678db4abf296a647ab10f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3087434747367934792}
   m_SourcePrefab: {fileID: 100100000, guid: 47ce15c8c5678db4abf296a647ab10f7, type: 3}
 --- !u!1 &3048076143323792553 stripped
 GameObject:
@@ -129,9 +139,42 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &533273374365786372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3048076143323792553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92a807ed71fee644903d6269744d67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3087434747367934792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3048076143323792553}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.68328667, y: 0.54144025, z: 0.2006774}
+  m_Center: {x: 0.00996685, y: -0.03511083, z: -0.00018239021}
