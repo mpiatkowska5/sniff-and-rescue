@@ -1082,6 +1082,10 @@ PrefabInstance:
       propertyPath: prevSpline
       value: 
       objectReference: {fileID: 1190872842}
+    - target: {fileID: 4977918238423890428, guid: 26898716ac753f048b171ae808f70784, type: 3}
+      propertyPath: m_updateRotation
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5168379099460383000, guid: 26898716ac753f048b171ae808f70784, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13400269
@@ -9986,6 +9990,18 @@ PrefabInstance:
     - target: {fileID: 4215778248025662723, guid: bfebfb76f706a244989fc0967a8d7d88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.509
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207418496075912988, guid: bfebfb76f706a244989fc0967a8d7d88, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.09923168
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207418496075912988, guid: bfebfb76f706a244989fc0967a8d7d88, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.020400243
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207418496075912988, guid: bfebfb76f706a244989fc0967a8d7d88, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.004191549
       objectReference: {fileID: 0}
     - target: {fileID: 7208328752440402483, guid: bfebfb76f706a244989fc0967a8d7d88, type: 3}
       propertyPath: m_Name
