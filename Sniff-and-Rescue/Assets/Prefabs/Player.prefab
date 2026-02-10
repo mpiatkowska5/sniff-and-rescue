@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 5
   runningSpeed: 10
-  jumpForce: 2
+  jumpForce: 1.75
   gravity: -9.81
   mouseSensitivity: 10
   spawningPoint: {fileID: 0}
