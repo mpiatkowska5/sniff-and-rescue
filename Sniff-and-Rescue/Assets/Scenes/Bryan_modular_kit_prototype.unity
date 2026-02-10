@@ -57464,7 +57464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scentTrail: {fileID: 1916300454}
-  waitTime: 5
+  waitTime: 7
 --- !u!64 &877319593
 MeshCollider:
   m_ObjectHideFlags: 0
