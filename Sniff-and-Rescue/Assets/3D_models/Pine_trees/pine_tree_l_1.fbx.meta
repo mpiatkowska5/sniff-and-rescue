@@ -3,7 +3,27 @@ guid: 4204d95e326e2a140885b64b1c2de725
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pine_bark
+    second: {fileID: 2100000, guid: 6dc353afe8b5cbd4780da1e5dda87cb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pine_leaf
+    second: {fileID: 2100000, guid: 640acb332156db946b58e0e929330f81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stickbush_1_base
+    second: {fileID: 2100000, guid: 1ec9617eb8f7b244f86612f476396dd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stickbush_2_base
+    second: {fileID: 2100000, guid: fce191b7cc4e1da43ae12331d169dfa1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
