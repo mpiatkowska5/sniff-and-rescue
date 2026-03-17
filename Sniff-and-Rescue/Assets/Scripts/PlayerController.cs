@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnRunStart(InputValue value)
     {
-        isRunning = value.Get<float>();
+        //isRunning = value.Get<float>();
         speed = runningSpeed;
         Debug.Log(speed);
     }
@@ -92,16 +93,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update()
-    {
-        /*if(isRunning>0.2)
-        {
-            speed = runningSpeed;
-        }
-        else
-        {
-            speed = walkingSpeed;
-        }*/
-        
+    {        
         // === LOOKING ===
         float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
         float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
@@ -126,11 +118,22 @@ public class PlayerController : MonoBehaviour
 
         // == MOVING ==
         //translate input into 3D vector
-        Vector3 movement = (transform.right * moveInput.x 
-                         + transform.forward * moveInput.y).normalized;
+        Vector3 movement = (transform.right * moveInput.x + transform.forward * moveInput.y).normalized;
+        
+        /*if(moveInput.magnitude > 0.9)
+        {
+            speed = runningSpeed;
+        }
+        else
+        {
+            speed = walkingSpeed;
+        }*/
+        speed = 8 * moveInput.magnitude;
 
         // Apply Movement
         controller.Move((movement * speed + velocity) * Time.deltaTime);
+
+        Debug.Log(speed);
         
     }
 
