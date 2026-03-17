@@ -1,11 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class InteractionController : MonoBehaviour
 {
     [SerializeField] Camera playerCamera;
     [SerializeField] float interactionDistance;
     IInteractable currentInteractable;
+    [SerializeField] GameObject interactionPrompt;
+
+    void Start()
+    {
+        interactionPrompt.SetActive(false);
+    }
 
     void Update()
     {
@@ -25,6 +32,14 @@ public class InteractionController : MonoBehaviour
         else
         {
             currentInteractable = null;
+        }
+
+        if(currentInteractable != null)
+        {
+            interactionPrompt.SetActive(true);
+        } else
+        {
+            interactionPrompt.SetActive(false);
         }
     }
 
