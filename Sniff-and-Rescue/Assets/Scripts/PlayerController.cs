@@ -27,15 +27,30 @@ public class PlayerController : MonoBehaviour
 
     CharacterController controller;
 
+    PlayerInput input;
+
+    private InputAction jumpInput;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
 
+        input = GetComponent<PlayerInput>();
         // deal with mouse cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         speed = walkingSpeed;
+
+        //block jump until trigger
+
+        jumpInput = input.actions["Jump"];
+
+        if (jumpInput != null){
+            Debug.Log("read jump input");
+        }
+
+        jumpInput.Disable();
     }
 
     private void Start()
@@ -125,6 +140,16 @@ public class PlayerController : MonoBehaviour
         transform.position = spawningPoint.position;
         controller.enabled = true;
 
+    }
+
+    private void OnTriggerEnter(Collider unlockCollider)
+    {
+        if (unlockCollider.gameObject.CompareTag("JumpUnlock"))
+        {
+            Destroy(unlockCollider);
+            Debug.Log("Should enable jump");
+             jumpInput.Enable();
+        }
     }
 
 }

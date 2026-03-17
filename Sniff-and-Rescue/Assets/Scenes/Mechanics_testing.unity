@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: interactionDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7238481527670432078, guid: 47f37a330fad4d847913f0330cd9f50f, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -264,12 +268,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275481280}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.51, y: -0.86, z: -12.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1767898636}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1275481282
 BoxCollider:
@@ -355,26 +359,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1767898636}
   - component: {fileID: 1767898635}
-  - component: {fileID: 1767898634}
   m_Layer: 0
   m_Name: trigger
-  m_TagString: Untagged
+  m_TagString: JumpUnlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1767898634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767898633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2695ec3f7e01d654c92d8b2b811e6631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1767898635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -390,7 +381,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -405,11 +396,10 @@ Transform:
   m_GameObject: {fileID: 1767898633}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.51, y: -1.33, z: -12.36}
+  m_LocalPosition: {x: 9.51, y: -1.33, z: -12.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1275481281}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1965440171
@@ -647,6 +637,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1965440173}
+  - {fileID: 1275481281}
   - {fileID: 1999468281}
   - {fileID: 1767898636}
   - {fileID: 943848859}
