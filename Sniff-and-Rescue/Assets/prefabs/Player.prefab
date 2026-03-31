@@ -75,9 +75,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 5
   runningSpeed: 10
-  jumpForce: 1.75
-  gravity: -9.81
+  jumpForce: 7
+  gravity: -14
   mouseSensitivity: 10
+  accelerationInAir: 25
   spawningPoint: {fileID: 0}
   head: {fileID: 3595379461525062257}
   moveInput: {x: 0, y: 0}
@@ -94,7 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 2951620943471133753}
-  interactionDistance: 5
+  interactionDistance: 8
+  interactionPrompt: {fileID: 0}
 --- !u!114 &7238481527670432078
 MonoBehaviour:
   m_ObjectHideFlags: 0

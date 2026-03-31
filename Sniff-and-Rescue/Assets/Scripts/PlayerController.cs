@@ -11,26 +11,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float mouseSensitivity = 100f;
-
-    [SerializeField] Transform spawningPoint;
+    [SerializeField] float speed = 10f;
 
     //using the whole body as the "head" rn, later can be changed to a dog head model (to have the sount visible) and we can have the paws separately
     [SerializeField] Transform head;
 
     float xRotation; //remember head rotation
-    Vector3 velocity; // remember player speed (need for falling)
+    Vector3 velocity; // remember player speed
+
+    bool canJump;
 
      //retrieved from InputSystem
     public Vector2 moveInput;
-    Vector3 lookInput;
+    private Vector3 movement;
+    private Vector3 lookInput;
     float isRunning;
-    float speed;
 
     CharacterController controller;
 
     PlayerInput input;
 
-    private InputAction jumpInput;
 
     private void Awake()
     {
@@ -41,22 +41,9 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        speed = walkingSpeed;
-
         //block jump until trigger
+        canJump = false;
 
-        jumpInput = input.actions["Jump"];
-
-        if (jumpInput != null){
-            Debug.Log("read jump input");
-        }
-
-        jumpInput.Disable();
-    }
-
-    private void Start()
-    {
-       // this.ResetBackToSpawningPoint();
     }
     
     //get the input from keyboard/gamepad for movement
@@ -72,10 +59,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump()
     {
-        if(controller.isGrounded)
+
+        if(controller.isGrounded && canJump)
         {
-            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            //velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            velocity = new Vector3(velocity.x, 0f, velocity.z);
+            velocity += Vector3.up * jumpForce;
         }
+
     }
 
     private void OnRunStart(InputValue value)
@@ -104,45 +95,23 @@ public class PlayerController : MonoBehaviour
         head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         //turn 
-        transform.Rotate(Vector3.up * mouseX);
-      
+        transform.Rotate(new Vector3(0f, mouseX, 0f), Space.Self);
+
         // == GRAVITY ==
         //apply pull of gravity every frame
         velocity.y += gravity * Time.deltaTime;
 
-         //if we are standing on ground, reset velocity.y
-        if(controller.isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f; //clamp feet to the ground
-        }
-
         // == MOVING ==
         //translate input into 3D vector
-        Vector3 movement = (transform.right * moveInput.x + transform.forward * moveInput.y).normalized;
-        
-        /*if(moveInput.magnitude > 0.9)
-        {
-            speed = runningSpeed;
-        }
-        else
-        {
-            speed = walkingSpeed;
-        }*/
-        speed = 8 * moveInput.magnitude;
+        movement = (transform.right * moveInput.x + transform.forward * moveInput.y).normalized;
+
+        //speed = 8 * moveInput.magnitude;
 
         // Apply Movement
-        controller.Move((movement * speed + velocity) * Time.deltaTime);
+        controller.Move((movement * (speed * moveInput.magnitude) + velocity) * Time.deltaTime);
 
         Debug.Log(speed);
         
-    }
-
-    public void ResetBackToSpawningPoint()
-    {
-        controller.enabled = false;
-        transform.position = spawningPoint.position;
-        controller.enabled = true;
-
     }
 
     private void OnTriggerEnter(Collider unlockCollider)
@@ -151,7 +120,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(unlockCollider);
             Debug.Log("Should enable jump");
-             jumpInput.Enable();
+            canJump = true;
         }
     }
 
