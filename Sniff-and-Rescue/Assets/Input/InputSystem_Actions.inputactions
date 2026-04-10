@@ -58,15 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "New action",
-                    "type": "Value",
-                    "id": "578821f7-a9d0-4358-a717-6243eb99b787",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -216,7 +207,7 @@
                 {
                     "name": "",
                     "id": "43dc4ba2-67a7-4fa4-b28d-b4a12198f70f",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/leftStickPress",
                     "interactions": "Press",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -238,22 +229,11 @@
                 {
                     "name": "",
                     "id": "8ba4ef7a-0cc8-4c5e-aea6-1894804431a3",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/leftStickPress",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "RunStop",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2c68f798-992a-4177-8cd2-0d8653660dd0",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
