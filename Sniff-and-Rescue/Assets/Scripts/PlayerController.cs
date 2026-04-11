@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float mouseSensitivity = 100f;
-    [SerializeField] float speed = 10f;
+    [SerializeField] float speed = 5f;
 
     //using the whole body as the "head" rn, later can be changed to a dog head model (to have the sount visible) and we can have the paws separately
     [SerializeField] Transform head;
@@ -20,16 +20,18 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity; // remember player speed
 
     bool canJump;
+    bool isRunning;
+    
 
      //retrieved from InputSystem
     public Vector2 moveInput;
     private Vector3 movement;
     private Vector3 lookInput;
-    float isRunning;
 
     CharacterController controller;
 
     PlayerInput input;
+    
 
 
     private void Awake()
@@ -42,7 +44,8 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
 
         //block jump until trigger
-        canJump = false;
+        canJump = true;
+        isRunning = false;
 
     }
     
@@ -72,16 +75,25 @@ public class PlayerController : MonoBehaviour
     private void OnRunStart(InputValue value)
     {
         //isRunning = value.Get<float>();
-        speed = runningSpeed;
+        if (isRunning)
+        {
+            speed = walkingSpeed;
+            isRunning = false;
+        }else
+        {
+            speed = runningSpeed;
+            isRunning=true;
+        }
+            
         Debug.Log(speed);
     }
 
-    private void OnRunStop()
+    /*private void OnRunStop()
     {
         speed = walkingSpeed;    
         Debug.Log(speed);
         
-    }
+    }*/
 
     private void Update()
     {        
@@ -108,7 +120,8 @@ public class PlayerController : MonoBehaviour
         //speed = 8 * moveInput.magnitude;
 
         // Apply Movement
-        controller.Move((movement * (speed * moveInput.magnitude) + velocity) * Time.deltaTime);
+        //controller.Move((movement * (speed * moveInput.magnitude) + velocity) * Time.deltaTime);
+        controller.Move((movement * (speed) + velocity) * Time.deltaTime);
 
         Debug.Log(speed);
         
