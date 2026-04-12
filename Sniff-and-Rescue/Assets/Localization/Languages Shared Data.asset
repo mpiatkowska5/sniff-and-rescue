@@ -59,6 +59,26 @@ MonoBehaviour:
     m_Key: SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 299532249219072
+    m_Key: PausedText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300155099168768
+    m_Key: ContinueText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300346334265344
+    m_Key: SettingsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300801789542400
+    m_Key: MainMenuText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301475575119872
+    m_Key: PauseSettingsText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

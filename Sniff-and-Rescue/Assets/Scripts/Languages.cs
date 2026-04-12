@@ -7,66 +7,39 @@ using System.Collections;
 
 public class Languages : MonoBehaviour
 {
-    [System.Serializable]
-    public struct LanguageButton
+    private void Start()
     {
-        public Button button;
-        public Locale locale;
+        Invoke("Delay", 0.1f);
     }
 
-    public LanguageButton[] languageButtons;
+    private void Delay()
+    {
+        string lang = PlayerPrefs.GetString("lang", "en"); // default English
+        
+    }
 
-    IEnumerator Start()
+    public void ChangeLanguage(string lang)
+    {
+        StartCoroutine(SetLocale(lang));
+    }
+
+    private IEnumerator SetLocale(string lang)
     {
         yield return LocalizationSettings.InitializationOperation;
 
-        LoadSavedLanguage();
-
-        foreach(var langBtn in languageButtons)
+        if (lang == "fi")
         {
-            langBtn.button.onClick.AddListener(() => ChangeLanguage(langBtn.locale));
+            LocalizationSettings.SelectedLocale =
+                LocalizationSettings.AvailableLocales.GetLocale("fi");
         }
+        else // default to English
+        {
+            LocalizationSettings.SelectedLocale =
+                LocalizationSettings.AvailableLocales.GetLocale("en");
+        }
+
+        PlayerPrefs.SetString("lang", lang);
+
     }
 
-    void LoadSavedLanguage()
-    {
-        string savedLangCode = PlayerPrefs.GetString("Selected Language", "");
-
-        if (!string.IsNullOrEmpty(savedLangCode))
-        {
-            Locale savedLocale = LocalizationSettings.AvailableLocales.GetLocale(
-                new LocaleIdentifier(savedLangCode));
-
-            if (savedLocale != null)
-            {
-                LocalizationSettings.SelectedLocale = savedLocale;
-                Debug.Log("Loaded saved language: " + savedLangCode);
-                return;
-            }
-        }
-        Locale deviceLocale = LocalizationSettings.AvailableLocales.GetLocale(
-             Application.systemLanguage
-             );
-        if (deviceLocale != null)
-        {
-            LocalizationSettings.SelectedLocale = deviceLocale;
-            Debug.Log("Using device language: " + Application.systemLanguage);
-
-        }
-        else
-        {
-            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
-            Debug.LogWarning("Using default language");
-        }
-    }
-
-    
-
-    void ChangeLanguage(Locale targetLocale)
-    {
-        LocalizationSettings.SelectedLocale = targetLocale;
-        PlayerPrefs.SetString("SelectedLanguage", targetLocale.Identifier.Code);
-        PlayerPrefs.Save();
-        Debug.Log("Language saved" + targetLocale.Identifier.Code);
-    }
 }

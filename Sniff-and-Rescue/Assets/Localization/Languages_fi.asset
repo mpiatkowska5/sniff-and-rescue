@@ -62,6 +62,26 @@ MonoBehaviour:
     m_Localized: "\xC4\xE4nitehosteet"
     m_Metadata:
       m_Items: []
+  - m_Id: 299532249219072
+    m_Localized: KESKEYTETTY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300155099168768
+    m_Localized: Jatka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300346334265344
+    m_Localized: Asetukset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300801789542400
+    m_Localized: "P\xE4\xE4valikko"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301475575119872
+    m_Localized: Asetukset
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

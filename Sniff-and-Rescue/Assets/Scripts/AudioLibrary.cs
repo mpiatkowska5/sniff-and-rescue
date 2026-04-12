@@ -1,30 +1,27 @@
 using UnityEngine;
 
-
-
 [System.Serializable]
-
 public struct MusicTrack
 {
-        public string trackName;
-        public AudioClip clip;
+    public string trackName;
+    public AudioClip clip;
 }
 
-    public class AudioLibrary : MonoBehaviour
+public class AudioLibrary : MonoBehaviour
+{
+    public MusicTrack[] tracks;
+
+    public AudioClip GetClipFromName(string trackName)
     {
-        public MusicTrack[] tracks;
-
-        public AudioClip GetClipFromName(string trackName)
+        foreach (var track in tracks)
         {
-            foreach (var track in tracks)
+            if (track.trackName == trackName)
             {
-                if (track.trackName == trackName)
-                {
-                    return track.clip;
-                }
+                return track.clip;
             }
-            return null;
         }
+
+        Debug.LogWarning("Audio clip not found: " + trackName);
+        return null;
     }
-
-
+}
