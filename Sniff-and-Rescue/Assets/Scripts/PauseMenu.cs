@@ -1,51 +1,81 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
+
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public static bool isPaused;
-    
-    [SerializeField] Button settingsBtn;
-    [SerializeField] Button continueBtn;
 
-    
 
-    public void Start()
+    public static bool GameIsPaused = false;
+    public GameObject pauseMenuUI;
+    public GameObject pauseSettings;
+
+    void Start()
     {
-       pauseMenu.SetActive(false);
+        pauseMenuUI.SetActive(false);
+        pauseSettings.SetActive(false);
+        Resume();
     }
 
-    public void Update()
+    void Update ()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if(GameIsPaused)
             {
-                ResumeGame();
+                Resume();
+                CloseSettings();
+                pauseMenuUI.SetActive(false);
             }
             else
             {
-                PauseGame();
+                Pause();
             }
         }
     }
-
-    public void PauseGame()
+    public void Resume()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
-    }
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
-    public void ResumeGame()
-    {
-        pauseMenu.SetActive(false);
+
+        pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        isPaused=false;
+        GameIsPaused = false;
     }
 
-   
-    
+    void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        pauseSettings.SetActive(false);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void OpenSettings()
+    {
+        pauseMenuUI.SetActive(false);
+        pauseSettings.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        pauseMenuUI.SetActive(true);
+        pauseSettings.SetActive(false);
+    }
+
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit game");
+    }
 }
