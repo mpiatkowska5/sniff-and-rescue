@@ -9,7 +9,7 @@ public class EndOfDemo : MonoBehaviour
         {
             Debug.Log("hit end trigger");
             GameEnd();
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
     }
 
