@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
 
         //block jump until trigger
-        canJump = true;
+        canJump = false;
         isRunning = false;
 
     }
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         //controller.Move((movement * (speed * moveInput.magnitude) + velocity) * Time.deltaTime);
         controller.Move((movement * (speed) + velocity) * Time.deltaTime);
 
-        Debug.Log(speed);
+        //Debug.Log(speed);
         
     }
 

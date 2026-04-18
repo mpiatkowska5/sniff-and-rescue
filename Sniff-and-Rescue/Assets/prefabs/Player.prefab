@@ -78,8 +78,7 @@ MonoBehaviour:
   jumpForce: 7
   gravity: -14
   mouseSensitivity: 10
-  accelerationInAir: 25
-  spawningPoint: {fileID: 0}
+  speed: 5
   head: {fileID: 3595379461525062257}
   moveInput: {x: 0, y: 0}
 --- !u!114 &6880147461867170532
