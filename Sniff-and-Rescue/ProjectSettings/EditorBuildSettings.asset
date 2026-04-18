@@ -24,5 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Bryan_modular_kit_prototype.unity
     guid: a44a90c102a0882458340abf9c14a6c9
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 42306ac65047acc419c51ddf0ae704b7, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: d18e0ab9da4a1a047a8d68470cc7434c, type: 2}
   m_UseUCBPForAssetBundles: 0
