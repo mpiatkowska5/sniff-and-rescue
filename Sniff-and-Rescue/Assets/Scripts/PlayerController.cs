@@ -31,12 +31,15 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
 
     PlayerInput input;
+    Rigidbody rb;
     
 
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+
+        rb = GetComponentInChildren<Rigidbody>();
 
         input = GetComponent<PlayerInput>();
         // deal with mouse cursor
@@ -135,6 +138,16 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Should enable jump");
             canJump = true;
         }
+    }
+
+    public void SetParent(Transform newParent)
+    {
+        transform.parent = newParent;
+    }
+
+    public void Respawn(Transform spawnPoint)
+    {
+        rb.position = spawnPoint.position;
     }
 
 }

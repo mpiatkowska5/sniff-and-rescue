@@ -3,35 +3,46 @@ using System.Collections;
 
 public class FallingIce : MonoBehaviour
 {
-    Rigidbody rb;
+    //Rigidbody rb;
     [SerializeField] float waitTimeFall = 0.01f;
     [SerializeField] float waitTimeRise = 4f;
+    [SerializeField] Transform dropTarget;
     bool hasFallen = false;
     bool isDown = false;
+    [SerializeField] bool playerIsPresent;
     Vector3 startPosition;
 
     private void Awake()
     {
-        rb = GetComponentInChildren<Rigidbody>();
-        startPosition = rb.transform.position;
+        //rb = GetComponentInChildren<Rigidbody>();
+        startPosition = transform.position;
     }
 
     private void Update()
     {
-        if(Physics.Raycast(rb.transform.position, Vector3.down, 0.01f))
+        //if(Physics.Raycast(rb.transform.position, Vector3.down, 0.01f))
+        //{
+        //    isDown = true;
+        //    Debug.Log("isDown)");
+        //}
+        //if (isDown && hasFallen)
+        //{
+        //    Debug.Log("down");
+        //    //Rise();
+        //    StartCoroutine(StartRising());
+        //}
+        //if (rb.transform.position == startPosition)
+        //{
+        //    hasFallen = false;
+        //}
+
+        if (playerIsPresent)
         {
-            isDown = true;
-            Debug.Log("isDown)");
+            transform.position = Vector3.MoveTowards(transform.position, dropTarget.position, 0.5f*Time.deltaTime);
         }
-        if (isDown && hasFallen)
+        else
         {
-            Debug.Log("down");
-            //Rise();
-            StartCoroutine(StartRising());
-        }
-        if (rb.transform.position == startPosition)
-        {
-            hasFallen = false;
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, 0.5f * Time.deltaTime);
         }
     }
 
@@ -39,9 +50,30 @@ public class FallingIce : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(StartFalling());
-            hasFallen = true;
-            Debug.Log("player detected");
+            //StartCoroutine(StartFalling());
+            //hasFallen = true;
+            //Debug.Log("player detected");
+            playerIsPresent = true;
+            
+
+            if (collider.TryGetComponent<PlayerController>(out PlayerController player))
+            {
+                player.SetParent(transform);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(StartRising());
+            //playerIsPresent = false;
+            
+            if (other.TryGetComponent<PlayerController>(out PlayerController player))
+            {
+                player.SetParent(null);
+            }
         }
     }
 
@@ -54,17 +86,18 @@ public class FallingIce : MonoBehaviour
     IEnumerator StartFalling()
     {
         yield return new WaitForSeconds(waitTimeFall);
-        rb.AddForce(new Vector3(0,-20,0), ForceMode.Force);
+        //rb.AddForce(new Vector3(0,-20,0), ForceMode.Force);
     }
 
     IEnumerator StartRising()
     {
         yield return new WaitForSeconds(waitTimeRise);
+        playerIsPresent = false;
         //while (rb.position != startPosition)
         //{
         //    rb.AddForce(new Vector3(0, 20, 0), ForceMode.Force);
         //}
-        rb.position = startPosition;
+        //rb.position = startPosition;
         //hasFallen = false;
     }
 }
