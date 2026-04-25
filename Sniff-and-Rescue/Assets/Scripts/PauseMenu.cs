@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
+using UnityEngine.InputSystem;
 
 
 public class PauseMenu : MonoBehaviour
@@ -13,6 +14,13 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject pauseSettings;
+    [SerializeField] GameObject player;
+    PlayerInput input;
+
+    private void Awake()
+    {
+        input = player.GetComponent<PlayerInput>();
+    }
 
     void Start()
     {

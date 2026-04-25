@@ -1148,6 +1148,10 @@ PrefabInstance:
       propertyPath: walkingSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5829745281359448565, guid: 47f37a330fad4d847913f0330cd9f50f, type: 3}
+      propertyPath: mouseSensitivity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5874210134639759093, guid: 47f37a330fad4d847913f0330cd9f50f, type: 3}
       propertyPath: m_CastShadows
       value: 0
