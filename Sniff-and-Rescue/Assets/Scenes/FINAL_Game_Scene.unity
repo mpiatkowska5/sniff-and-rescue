@@ -96715,20 +96715,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scentTrail: {fileID: 2131603116}
   waitTime: 60
---- !u!114 &1223950085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223950079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cac28a30a88b07248a8d1aeab42e2d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scentTrail: {fileID: 820752007}
-  waitTime: 5
 --- !u!65 &1223950086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124943,9 +124929,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7920825240308304677, guid: c872052f0c4b0f048ba309ed74b0ce32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1223950080}
-    - targetCorrespondingSourceObject: {fileID: 7920825240308304677, guid: c872052f0c4b0f048ba309ed74b0ce32, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1223950085}
   m_SourcePrefab: {fileID: 100100000, guid: c872052f0c4b0f048ba309ed74b0ce32, type: 3}
 --- !u!4 &1798289530 stripped
 Transform:
