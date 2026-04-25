@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1412554835010250177}
   - component: {fileID: 2459770846676530783}
   - component: {fileID: 6614400429121573260}
+  - component: {fileID: 472209525137365251}
   m_Layer: 0
   m_Name: fallentree_1
   m_TagString: Untagged
@@ -109,3 +110,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7532602523363160273, guid: c448706226c433f44972b21cfd7e7b86, type: 3}
+--- !u!136 &472209525137365251
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196180133030860013}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0066413125
+  m_Height: 0.070539944
+  m_Direction: 0
+  m_Center: {x: -0.028339967, y: -0.000000061592054, z: -0.00030778156}
