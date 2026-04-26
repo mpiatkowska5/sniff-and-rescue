@@ -2,15 +2,16 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class SettingsManager : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider;
-    [SerializeField] Slider musicSlider;
-    [SerializeField] Slider sfxSlider;
-    [SerializeField] Slider cameraSlider;
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private Slider cameraSlider;
+    
     EventSystem eventSystem;
-
 
     private void Awake()
     {
@@ -32,12 +33,12 @@ public class SettingsManager : MonoBehaviour
 
     }
 
+    
+
     private void OnEnable()
     {
         eventSystem.SetSelectedGameObject(volumeSlider.gameObject);
-        //volumeSlider.Select();
         Debug.Log("Current selected GameObject : " + eventSystem.currentSelectedGameObject);
-        
     }
 
     public void ChangeVolume()
