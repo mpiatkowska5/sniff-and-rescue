@@ -21,7 +21,7 @@ public class SplashscreenManager : MonoBehaviour
     {
         if (submitInput.triggered)
         {
-            sceneController.ChangeScene("UI_MainMenu");
+            sceneController.ChangeScene("UI_Menu_FINAL");
         }
     }
 
