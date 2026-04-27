@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4090256723434039443
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  postExposure:
+    m_OverrideState: 0
+    m_Value: 0
+  contrast:
+    m_OverrideState: 0
+    m_Value: 0
+  colorFilter:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 0
+  saturation:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &-3646063753244487423
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -46,6 +74,40 @@ MonoBehaviour:
   bladeRotation:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-3187028446985139190
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 0
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 0.7611298, y: 1, z: 0.82359785, w: -0.0018575444}
+  midtones:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.8943599, z: 0.72329867, w: 0.05443506}
+  highlights:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.91190976, z: 0.7397157, w: 0.09469239}
+  shadowsStart:
+    m_OverrideState: 1
+    m_Value: 0.05
+  shadowsEnd:
+    m_OverrideState: 1
+    m_Value: 0.05
+  highlightsStart:
+    m_OverrideState: 1
+    m_Value: 0.55
+  highlightsEnd:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +124,8 @@ MonoBehaviour:
   - {fileID: -3646063753244487423}
   - {fileID: 2611880542791506816}
   - {fileID: 8302344653419538974}
+  - {fileID: -3187028446985139190}
+  - {fileID: -4090256723434039443}
 --- !u!114 &2611880542791506816
 MonoBehaviour:
   m_ObjectHideFlags: 3
