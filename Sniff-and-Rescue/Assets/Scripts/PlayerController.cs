@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
 
     PlayerInput input;
-    Rigidbody rb;
+    //[SerializeField] Rigidbody rb;
     
 
 
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        rb = GetComponentInChildren<Rigidbody>();
+        //rb = GetComponentInChildren<Rigidbody>();
 
         input = GetComponent<PlayerInput>();
         // deal with mouse cursor
@@ -147,7 +147,11 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn(Transform spawnPoint)
     {
-        rb.position = spawnPoint.position;
+        controller.enabled = false;
+        Debug.Log(spawnPoint);
+        transform.position = spawnPoint.position;
+        controller.enabled = true;
+        //transform.position = spawnPoint.position;
     }
 
 }
