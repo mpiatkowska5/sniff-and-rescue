@@ -7,8 +7,8 @@ public class FallingIce : MonoBehaviour
     [SerializeField] float waitTimeFall = 0.01f;
     [SerializeField] float waitTimeRise = 4f;
     [SerializeField] Transform dropTarget;
-    bool hasFallen = false;
-    bool isDown = false;
+    //bool hasFallen = false;
+    //bool isDown = false;
     [SerializeField] bool playerIsPresent;
     Vector3 startPosition;
 
