@@ -101,20 +101,20 @@ Material:
     - _Cull: 1
     - _DstBlend: 10
     - _LoopStop: 2.9
-    - _Multiplier: 4
-    - _Noise2DPower: 0
-    - _Noise2DScale: 0.41
+    - _Multiplier: 5.64
+    - _Noise2DPower: 1.04
+    - _Noise2DScale: 0.582
     - _QueueControl: 1
     - _QueueOffset: 0
     - _Randomness: 0.15
     - _SHADOW_ENABLED: 1
     - _SHADOW_ENABLED_EDITOR_ONLY: 1
-    - _Samples: 40
+    - _Samples: 0.17
     - _ShadowAdd: -0.14
     - _ShadowMulti: 1
     - _Shadow_Add: -0.3
     - _Shadow_Multi: 3.52
-    - _Size: 20
+    - _Size: 18.14
     - _SrcBlend: 5
     - _Surface: 1
     - _Threshold: 21.5

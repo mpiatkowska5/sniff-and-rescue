@@ -269,7 +269,6 @@ GameObject:
   - component: {fileID: 3150947402476057625}
   - component: {fileID: 3827111021211758473}
   - component: {fileID: 533844209150835006}
-  - component: {fileID: 308629576881847719}
   m_Layer: 0
   m_Name: birch_tree_1
   m_TagString: Untagged
@@ -379,31 +378,6 @@ CapsuleCollider:
   m_Height: 4.0120406
   m_Direction: 1
   m_Center: {x: -0, y: 1.5060208, z: 0}
---- !u!205 &308629576881847719
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081772936135100425}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.11071742
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 0}
-  - screenRelativeHeight: 0.02878053
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.0037648901
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1
 --- !u!1 &3850142419723060411
 GameObject:
   m_ObjectHideFlags: 0
