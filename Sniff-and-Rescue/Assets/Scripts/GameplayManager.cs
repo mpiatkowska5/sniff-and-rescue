@@ -6,6 +6,12 @@ public class GameplayManager : MonoBehaviour
     public static float time;
     [SerializeField] TMP_Text timerText;
     [SerializeField] TMP_Text medkitText;
+    [SerializeField] GameObject tipText;
+
+    private void Awake()
+    {
+        tipText.SetActive(false);
+    }
 
     void Update()
     {
@@ -14,5 +20,14 @@ public class GameplayManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(time % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         medkitText.text = string.Format($"{medkit.medKitsCollected}/8");
+        if (PlayerController.jumpUnlocked == true)
+        {
+            tipText.SetActive(true);
+        }
+        else
+        {
+            tipText.SetActive(false); 
+        }
+
     }
 }
