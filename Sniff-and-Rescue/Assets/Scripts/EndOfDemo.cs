@@ -24,7 +24,7 @@ public class EndOfDemo : MonoBehaviour
         //currently the player gets "1000 - minus their time" points at the end of the game
         //can find a different way of counting the score after playtesting
 
-        int timeScoreDeduct = Mathf.FloorToInt(Timer.time);
+        int timeScoreDeduct = Mathf.FloorToInt(GameplayManager.time);
         int timeScore = 1000 - timeScoreDeduct;
         Debug.Log(timeScoreDeduct);
         Debug.Log(medkit.playerScore);
