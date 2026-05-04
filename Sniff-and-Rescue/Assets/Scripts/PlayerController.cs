@@ -91,13 +91,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log(speed);
     }
 
-    /*private void OnRunStop()
-    {
-        speed = walkingSpeed;    
-        Debug.Log(speed);
-        
-    }*/
-
     private void Update()
     {        
         // === LOOKING ===
@@ -153,6 +146,7 @@ public class PlayerController : MonoBehaviour
         controller.enabled = true;
         //transform.position = spawnPoint.position;
     }
+
 
 }
 

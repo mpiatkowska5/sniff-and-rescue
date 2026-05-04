@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "c0f02ee5-29c1-4053-b3fd-45048d2ec798",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -195,6 +204,28 @@
                 },
                 {
                     "name": "",
+                    "id": "837ffee9-a8ed-4244-b937-66e5d8387d2e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07cad71a-7eee-4956-9161-8a89a97b4401",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "754b8802-8c05-42e0-8646-ed21257c3a75",
                     "path": "<Keyboard>/leftShift",
                     "interactions": "Press",
@@ -256,7 +287,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -265,7 +296,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "15cef263-9014-4fd5-94d9-4e4a6234a6ef",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -617,6 +648,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05a332c5-50e6-48ed-b7b2-39eb6d63af0f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false

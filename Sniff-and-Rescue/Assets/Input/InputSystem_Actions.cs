@@ -144,6 +144,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0f02ee5-29c1-4053-b3fd-45048d2ec798"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -281,6 +290,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""837ffee9-a8ed-4244-b937-66e5d8387d2e"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07cad71a-7eee-4956-9161-8a89a97b4401"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""754b8802-8c05-42e0-8646-ed21257c3a75"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": ""Press"",
@@ -342,7 +373,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""7607c7b6-cd76-4816-beef-bd0341cfe950"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -351,7 +382,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""15cef263-9014-4fd5-94d9-4e4a6234a6ef"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -709,6 +740,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""05a332c5-50e6-48ed-b7b2-39eb6d63af0f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""82627dcc-3b13-4ba9-841d-e4b746d6553e"",
                     ""path"": ""*/{Cancel}"",
                     ""interactions"": """",
@@ -957,6 +999,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_RunStart = m_Player.FindAction("RunStart", throwIfNotFound: true);
         m_Player_RunStop = m_Player.FindAction("RunStop", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1056,6 +1099,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_RunStart;
     private readonly InputAction m_Player_RunStop;
+    private readonly InputAction m_Player_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1091,6 +1135,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/RunStop".
         /// </summary>
         public InputAction @RunStop => m_Wrapper.m_Player_RunStop;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1135,6 +1183,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RunStop.started += instance.OnRunStop;
             @RunStop.performed += instance.OnRunStop;
             @RunStop.canceled += instance.OnRunStop;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -1164,6 +1215,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RunStop.started -= instance.OnRunStop;
             @RunStop.performed -= instance.OnRunStop;
             @RunStop.canceled -= instance.OnRunStop;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -1519,6 +1573,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRunStop(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
