@@ -3,20 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class EndOfDemo : MonoBehaviour
 {
+    [SerializeField] private string sceneName = "UI_Menu_Final";
     void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("hit end trigger");
             GameEnd();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(sceneName);
         }
     }
 
-    public void MainMenu()
-    {
-        SceneManager.LoadScene(1);
-    }
     public void QuitGame()
     {
         Application.Quit();
