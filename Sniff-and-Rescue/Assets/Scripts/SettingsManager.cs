@@ -7,8 +7,6 @@ using UnityEngine.InputSystem;
 public class SettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider cameraSlider;
     
     EventSystem eventSystem;
@@ -32,7 +30,6 @@ public class SettingsManager : MonoBehaviour
         //}
 
     }
-
     
 
     private void OnEnable()
@@ -45,6 +42,12 @@ public class SettingsManager : MonoBehaviour
     {
         AudioListener.volume = volumeSlider.value;
         //Save();
+    }
+
+    public void ChangeSensitivity()
+    {
+        PlayerController.mouseSensitivity = (20 * cameraSlider.value) + 2;
+        //Debug.Log(PlayerController.mouseSensitivity);
     }
 
     //private void Load()

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float runningSpeed = 10f;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float gravity = -9.81f;
-    [SerializeField] float mouseSensitivity = 100f;
+    [SerializeField] public static float mouseSensitivity = 10f;
     [SerializeField] float speed = 5f;
 
     //using the whole body as the "head" rn, later can be changed to a dog head model (to have the sount visible) and we can have the paws separately
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity; // remember player speed
 
     public static bool jumpUnlocked;
+    public static bool runTipShouldShow;
     bool canJump;
     bool isRunning;
     
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
         canJump = false;
         isRunning = false;
         jumpUnlocked = false;
-
+        runTipShouldShow= false;
     }
     
     //get the input from keyboard/gamepad for movement
@@ -92,8 +93,10 @@ public class PlayerController : MonoBehaviour
             speed = runningSpeed;
             isRunning=true;
         }
-            
-        Debug.Log(speed);
+        if (runTipShouldShow == true)
+        {
+            runTipShouldShow= false;
+        }
     }
 
     private void Update()
@@ -136,6 +139,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Should enable jump");
             canJump = true;
             jumpUnlocked = true;
+        } else if (unlockCollider.gameObject.CompareTag("RunTip"))
+        {
+            Debug.Log("Should show run tip");
+            Destroy(unlockCollider);
+            runTipShouldShow = true;
         }
     }
 

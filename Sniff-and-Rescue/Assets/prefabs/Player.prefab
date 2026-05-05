@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf97eb0da9234f04b3f9beca6fbc0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 5
+  walkingSpeed: 4
   runningSpeed: 10
   jumpForce: 7
   gravity: -14
