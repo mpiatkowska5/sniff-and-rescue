@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     float xRotation; //remember head rotation
     Vector3 velocity; // remember player speed
 
+    public static bool jumpUnlocked;
     bool canJump;
     bool isRunning;
     
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
 
     PlayerInput input;
-    Rigidbody rb;
+    //[SerializeField] Rigidbody rb;
     
 
 
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        rb = GetComponentInChildren<Rigidbody>();
+        //rb = GetComponentInChildren<Rigidbody>();
 
         input = GetComponent<PlayerInput>();
         // deal with mouse cursor
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         //block jump until trigger
         canJump = false;
         isRunning = false;
+        jumpUnlocked = false;
 
     }
     
@@ -65,7 +67,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump()
     {
-
+        if (jumpUnlocked == true)
+        {
+            jumpUnlocked = false;
+        }
         if(controller.isGrounded && canJump)
         {
             //velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
@@ -130,6 +135,7 @@ public class PlayerController : MonoBehaviour
             Destroy(unlockCollider);
             Debug.Log("Should enable jump");
             canJump = true;
+            jumpUnlocked = true;
         }
     }
 
@@ -140,7 +146,11 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn(Transform spawnPoint)
     {
-        rb.position = spawnPoint.position;
+        controller.enabled = false;
+        Debug.Log(spawnPoint);
+        transform.position = spawnPoint.position;
+        controller.enabled = true;
+        //transform.position = spawnPoint.position;
     }
 
 
