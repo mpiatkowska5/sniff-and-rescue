@@ -488,7 +488,7 @@ RectTransform:
   m_Children:
   - {fileID: 8982114155896128864}
   - {fileID: 4499324045381348548}
-  m_Father: {fileID: 2377287108071530413}
+  m_Father: {fileID: 1487258280758257424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -875,7 +875,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4525195722812639742}
+  - {fileID: 1487258280758257424}
   - {fileID: 4850375672677124725}
   - {fileID: 5496175806917251029}
   - {fileID: 4096402668891023478}
@@ -965,6 +965,11 @@ MonoBehaviour:
   timerText: {fileID: 4124233456225072249}
   medkitText: {fileID: 8741002476595283854}
   tipText: {fileID: 6320813536819144136}
+  runTipText: {fileID: 0}
+  endScreen: {fileID: 0}
+  scoreText: {fileID: 0}
+  InteractPrompt: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &5383557908143994935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1228,42 @@ Transform:
   - {fileID: 4545622625239044335}
   m_Father: {fileID: 2377287108071530413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6777972198232782224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487258280758257424}
+  m_Layer: 5
+  m_Name: InteractContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1487258280758257424
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777972198232782224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4525195722812639742}
+  m_Father: {fileID: 2377287108071530413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7065705772610392953
 GameObject:
   m_ObjectHideFlags: 0

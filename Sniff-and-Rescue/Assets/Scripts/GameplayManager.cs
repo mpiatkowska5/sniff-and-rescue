@@ -11,6 +11,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] GameObject runTipText;
     [SerializeField] GameObject endScreen;
     [SerializeField] TMP_Text scoreText;
+    [SerializeField] GameObject InteractPrompt;
  
     [SerializeField] private GameObject player;
 
@@ -25,6 +26,7 @@ public class GameplayManager : MonoBehaviour
     {
         tipText.SetActive(false);
         endScreen.SetActive(false);
+        InteractPrompt.SetActive(true);
 
         input = player.GetComponent<PlayerInput>();
         submitInput = input.actions["Submit"];
@@ -83,5 +85,6 @@ public class GameplayManager : MonoBehaviour
     {
         endScreen.SetActive(true);
         scoreText.text = scoreManager.Score.ToString();
+        InteractPrompt.SetActive(false);
     }
 }
