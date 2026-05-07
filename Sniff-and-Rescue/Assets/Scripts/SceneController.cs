@@ -9,8 +9,6 @@ public class SceneController : MonoBehaviour
     {
         
         SceneManager.LoadScene(sceneName);
-        medkit.medKitsCollected = 0;
-        GameplayManager.time = 0;
     }
 
     

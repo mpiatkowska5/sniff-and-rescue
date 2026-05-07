@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class InGameUIManager : MonoBehaviour
 {
 
     [Header("Hud")]
-    [SerializeField] TMP_Text correctAnswersTextObject;
+    //[SerializeField] TMP_Text correctAnswersTextObject;
 
     [Header("Screens")]
     [SerializeField] GameObject pauseScreen;
@@ -25,11 +27,15 @@ public class InGameUIManager : MonoBehaviour
     private List<Button> answerButtons;
 
     private ScoreManager scoreManager;
+    EventSystem eventSystem;
     public event Action<int> AnswerSelected;
+
 
     private void Awake()
     {
         scoreManager = Resources.Load<ScoreManager>("ScoreManager");
+
+        eventSystem = EventSystem.current;
 
         answerButtons = new List<Button>();
     }
@@ -51,7 +57,7 @@ public class InGameUIManager : MonoBehaviour
 
     private void UpdateCorrectAnswers()
     {
-        correctAnswersTextObject.text = $"Correct answers: {scoreManager.CorrectAnswers}";
+        //correctAnswersTextObject.text = $"Correct answers: {scoreManager.CorrectAnswers}";
     }
 
     public void DisplayQuiz(QuestionData question)
@@ -79,6 +85,7 @@ public class InGameUIManager : MonoBehaviour
 
             answerButtons.Add(button);
         }
+        eventSystem.SetSelectedGameObject(answerButtons[0].gameObject);
     }
 
     public void ShowAnswerResult(int selectedAnswerIndex, int correctAnswerIndex)
@@ -101,7 +108,6 @@ public class InGameUIManager : MonoBehaviour
 
     public void CloseQuiz()
     {
-        Debug.Log("CloseQuiz function in InGameUIManager called");
         ClearAnswerButtons();
         quizScreen.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;

@@ -66,6 +66,7 @@ public class QuizManager : MonoBehaviour
         if (activeQuestion != null && activeQuestion.IsCorrectAnswer(answerIndex))
         {
             scoreManager.IncreaseCorrectAnswers();
+            scoreManager.IncreaseScore(150);
         }
 
         if (activeQuestion != null)

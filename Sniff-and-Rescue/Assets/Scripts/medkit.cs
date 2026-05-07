@@ -7,6 +7,7 @@ public class medkit : MonoBehaviour, IInteractable
 
     [SerializeField] QuestionData question;
     [SerializeField] QuizManager quizManager;
+    private ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -14,12 +15,13 @@ public class medkit : MonoBehaviour, IInteractable
         {
             quizManager = FindFirstObjectByType<QuizManager>();
         }
+        scoreManager = Resources.Load<ScoreManager>("ScoreManager");
     }
 
     public void Interact()
 	{
 		Debug.Log("interacted with medkit");
-		playerScore += 100;
+        scoreManager.IncreaseScore(50);
 		medKitsCollected++;
         if (quizManager == null)
         {

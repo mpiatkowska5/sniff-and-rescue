@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -8,10 +9,29 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] TMP_Text medkitText;
     [SerializeField] GameObject tipText;
     [SerializeField] GameObject runTipText;
+    [SerializeField] GameObject endScreen;
+    [SerializeField] TMP_Text scoreText;
+ 
+    [SerializeField] private GameObject player;
+
+    PlayerInput input;
+    private InputAction submitInput;
+
+    private LevelManager levelManager;
+    private ScoreManager scoreManager;
+    private SceneController sceneController;
 
     private void Awake()
     {
         tipText.SetActive(false);
+        endScreen.SetActive(false);
+
+        input = player.GetComponent<PlayerInput>();
+        submitInput = input.actions["Submit"];
+
+        levelManager = FindFirstObjectByType<LevelManager>();
+        sceneController = FindFirstObjectByType<SceneController>();
+        scoreManager = Resources.Load<ScoreManager>("ScoreManager");
     }
 
     void Update()
@@ -23,6 +43,15 @@ public class GameplayManager : MonoBehaviour
         medkitText.text = string.Format($"{medkit.medKitsCollected}/8");
         ActivateJumpTip();
         ActivateRunTip();
+
+        if(levelManager.CurrentState == GameState.GameEnded)
+        {
+            ActivateEndScreen();
+            if (submitInput.triggered)
+            {
+                sceneController.ChangeScene("UI_Menu_Final");
+            }
+        }
 
     }
 
@@ -48,5 +77,11 @@ public class GameplayManager : MonoBehaviour
         {
             runTipText.SetActive(false);
         }
+    }
+
+    private void ActivateEndScreen()
+    {
+        endScreen.SetActive(true);
+        scoreText.text = scoreManager.Score.ToString();
     }
 }
