@@ -79,14 +79,6 @@ MonoBehaviour:
     m_Key: PauseSettingsText
     m_Metadata:
       m_Items: []
-  - m_Id: 9455808105406464
-    m_Key: "jumpTipText\t"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 9455927622098944
-    m_Key: runTipText
-    m_Metadata:
-      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

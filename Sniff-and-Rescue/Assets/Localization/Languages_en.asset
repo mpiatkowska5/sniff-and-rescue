@@ -82,14 +82,6 @@ MonoBehaviour:
     m_Localized: Settings
     m_Metadata:
       m_Items: []
-  - m_Id: 9455808105406464
-    m_Localized: 'Try jumping with      '
-    m_Metadata:
-      m_Items: []
-  - m_Id: 9455927622098944
-    m_Localized: 'Run over the ice by pressing      '
-    m_Metadata:
-      m_Items: []
   references:
     version: 2
     RefIds: []
