@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Assets-Shared
+  m_Name: Localization-Assets-Finnish (fi)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-Assets-Shared
-  m_GUID: b9f5ac778ac18bb468a8f0353286c546
+  m_GroupName: Localization-Assets-Finnish (fi)
+  m_GUID: 60d4965040f35f34c91778ca3482ffcc
   m_SerializeEntries:
-  - m_GUID: 1e55e6d32dbaec44598e8960e85ccafb
-    m_Address: Assets/Localization/AssetLocalization Shared Data.asset
+  - m_GUID: 28ee9db4b9418274a9e1d659420392e6
+    m_Address: Question1_fi
     m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-fi
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a810d1ce4916c3d4ea179736b0b35702
-    m_Address: Assets/Localization/Languages Shared Data.asset
+  - m_GUID: 904cf65ddae75f540b4f58595f87bb1b
+    m_Address: Question2_fi
     m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-fi
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 666f390c229fdda45836eae4bd045be1, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e7a72f264dc875846b7e16b6e784014b, type: 2}
-    - {fileID: 11400000, guid: 20cd61073e5f16644ad5778113576e1f, type: 2}
+    - {fileID: 11400000, guid: 9b6b948fd65e98b40982a7c8c18fb808, type: 2}
+    - {fileID: 11400000, guid: e2056332e8159194e871239f3b4a0e71, type: 2}

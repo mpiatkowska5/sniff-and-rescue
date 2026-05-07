@@ -82,6 +82,14 @@ MonoBehaviour:
     m_Localized: Asetukset
     m_Metadata:
       m_Items: []
+  - m_Id: 9455808105406464
+    m_Localized: "Hypp\xE4\xE4 painamalla      "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9455927622098944
+    m_Localized: "Juokse j\xE4\xE4n yli painamalla      "
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
