@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6160cd14715e104d9b764ec95567eff, type: 3}
-  m_Name: QuestionAnimals
+  m_Name: Question8
   m_EditorClassIdentifier: Assembly-CSharp::QuestionData
-  question: Which one of these is an animal?
+  question: How do you help someone suffering from hypothermia?
   answers:
-  - Giraffe
-  - Ducktape
-  - Genuine
-  correctAnswerIndex: 0
+  - You leave them alone - they will be fine!
+  - Take off their extra clothes
+  - Take them to a warm place and give them a blanket
+  correctAnswerIndex: 2

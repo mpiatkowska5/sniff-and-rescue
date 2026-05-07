@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Assets-Shared
+  m_Name: Localization-Assets-English (en)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-Assets-Shared
-  m_GUID: b9f5ac778ac18bb468a8f0353286c546
+  m_GroupName: Localization-Assets-English (en)
+  m_GUID: 7035cdad8ebf58f4085b45d4635fbc97
   m_SerializeEntries:
-  - m_GUID: 1e55e6d32dbaec44598e8960e85ccafb
-    m_Address: Assets/Localization/AssetLocalization Shared Data.asset
+  - m_GUID: 85a74a354d31d9640ac2c1a00905a5c4
+    m_Address: Assets/Scripts/Gameplay/Questions/Question1.asset
     m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a810d1ce4916c3d4ea179736b0b35702
-    m_Address: Assets/Localization/Languages Shared Data.asset
+  - m_GUID: 9ac31a523ac007749aea6ab0ae2b7478
+    m_Address: Question2
     m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 666f390c229fdda45836eae4bd045be1, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e7a72f264dc875846b7e16b6e784014b, type: 2}
-    - {fileID: 11400000, guid: 20cd61073e5f16644ad5778113576e1f, type: 2}
+    - {fileID: 11400000, guid: d2c8f2c21f102104dac40efecbb8185a, type: 2}
+    - {fileID: 11400000, guid: 21af8b5b7bcbfe943aeb48fa69964b56, type: 2}
