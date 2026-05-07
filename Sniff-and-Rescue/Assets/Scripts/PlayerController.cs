@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     PlayerInput input;
     //[SerializeField] Rigidbody rb;
     
+    // Level Manager (controls state)
+    private LevelManager levelManager;
 
 
     private void Awake()
@@ -53,6 +55,9 @@ public class PlayerController : MonoBehaviour
         isRunning = false;
         jumpUnlocked = false;
         runTipShouldShow= false;
+
+        // fetch level manager
+        levelManager = FindAnyObjectByType<LevelManager>();
     }
     
     //get the input from keyboard/gamepad for movement
@@ -100,7 +105,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update()
-    {        
+    {
+        if (levelManager.CurrentState != GameState.Running)
+            return;
+
         // === LOOKING ===
         float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
         float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
