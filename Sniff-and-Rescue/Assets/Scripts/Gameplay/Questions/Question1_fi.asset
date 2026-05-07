@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6160cd14715e104d9b764ec95567eff, type: 3}
-  m_Name: QuestionNature
+  m_Name: Question1_fi
   m_EditorClassIdentifier: Assembly-CSharp::QuestionData
-  question: What do plants need to make food?
+  question: "Mist\xE4 numerosta saa apua, kun on h\xE4t\xE4?"
   answers:
-  - Sunlight
-  - Sandwiches
-  - Moon dust
-  - Plastic
-  correctAnswerIndex: 0
+  - 123
+  - 112
+  - 999
+  correctAnswerIndex: 1
