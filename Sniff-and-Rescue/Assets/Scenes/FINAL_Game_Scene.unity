@@ -43409,14 +43409,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 244765687}
   - {fileID: 707163371}
   - {fileID: 641192059}
-  - {fileID: 244765687}
+  - {fileID: 551629759}
   - {fileID: 685950993}
   - {fileID: 1723105825}
   - {fileID: 2094714220}
   - {fileID: 343959056}
-  - {fileID: 551629759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &352775395
@@ -61106,8 +61106,8 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 83227ae867c15254ea7fe754587dd5d7, type: 3}
   m_Resource: {fileID: 8300000, guid: 83227ae867c15254ea7fe754587dd5d7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.123
-  m_Pitch: 1
+  m_Volume: 0.025
+  m_Pitch: 1.51
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -180290,6 +180290,10 @@ PrefabInstance:
     - target: {fileID: 7303470958889721837, guid: 8ba536557557be34d884be4e937a6af3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -160.096
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284667000797505681, guid: 8ba536557557be34d884be4e937a6af3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2116
       objectReference: {fileID: 0}
     - target: {fileID: 8284667000797505681, guid: 8ba536557557be34d884be4e937a6af3, type: 3}
       propertyPath: m_LocalPosition.x
