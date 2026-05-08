@@ -26,6 +26,8 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] Color defaultAnswerColor = Color.white;
     private List<Button> answerButtons;
 
+
+
     private ScoreManager scoreManager;
     EventSystem eventSystem;
     public event Action<int> AnswerSelected;
@@ -53,6 +55,8 @@ public class InGameUIManager : MonoBehaviour
         UpdateCorrectAnswers();
         CloseQuiz();
         DisplayState(GameState.Running);
+
+    
     }
 
     private void UpdateCorrectAnswers()
@@ -98,10 +102,12 @@ public class InGameUIManager : MonoBehaviour
             if (i == correctAnswerIndex)
             {
                 SetAnswerButtonColor(button, correctAnswerColor);
+             
             }
             else if (i == selectedAnswerIndex)
             {
                 SetAnswerButtonColor(button, wrongAnswerColor);
+               
             }
         }
     }
