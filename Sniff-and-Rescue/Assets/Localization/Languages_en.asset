@@ -90,6 +90,26 @@ MonoBehaviour:
     m_Localized: 'Run over the ice by pressing      '
     m_Metadata:
       m_Items: []
+  - m_Id: 9530620936970240
+    m_Localized: "Score\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9530762977075200
+    m_Localized: Thank you for playing!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9547198252441600
+    m_Localized: Kymenlaakso Rescue Services
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9547458479644672
+    m_Localized: "\rThe Kymenlaakso Rescue Department rescues and protects people,
+      property and the environment in all tasks assigned to rescue operations within
+      the Kymenlaakso region. The Kymenlaakso Rescue Department coordinates preparedness
+      and prevents accidents through education and creating the conditions for rescue
+      operations with its skilled, motivated and dedicated personnel."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

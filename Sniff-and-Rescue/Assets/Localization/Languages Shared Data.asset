@@ -87,6 +87,22 @@ MonoBehaviour:
     m_Key: runTipText
     m_Metadata:
       m_Items: []
+  - m_Id: 9530620936970240
+    m_Key: EndScoreTitleText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9530762977075200
+    m_Key: EndScoreThanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9547198252441600
+    m_Key: "RescueTitleText\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9547458479644672
+    m_Key: "RescueInfoText\t"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

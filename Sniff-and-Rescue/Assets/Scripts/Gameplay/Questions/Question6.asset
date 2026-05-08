@@ -15,6 +15,6 @@ MonoBehaviour:
   question: What should you do if you get lost in the woods?
   answers:
   - Run around like a headless chicken!
-  - You stay where you are and try to calm down so that you are easier to find.
+  - Stay where you are and try to calm down so that you are easier to find.
   - You hide because getting lost can be scary.
   correctAnswerIndex: 1
